@@ -17,7 +17,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'pytest --tb=short'
+                sh '/var/jenkins_home/.local/bin/pytest --tb=short'
             }
         }
 
