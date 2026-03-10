@@ -21,15 +21,11 @@ pipeline {
             }
         }
 
-        stage('SCA Scan') {
-            steps {
-              
-                sh '/opt/dependency-check/bin/dependency-check.sh --project "TP-Jenkins" --scan . --format HTML --failOnCVSS 7'
-                sh '/opt/dependency-check/bin/dependency-check.sh --project "TP-Jenkins" --scan . --format HTML --failOnCVSS 7 --nvdApiKey C46B37CC-811C-F111-8368-129478FCB64D'
-
-
-            }
-        }
+       stage('SCA Scan') {
+    steps {
+        sh '/opt/dependency-check/bin/dependency-check.sh --project "TP-Jenkins" --scan . --format HTML --failOnCVSS 7 --nvdApiKey C46B37CC-811C-F111-8368-129478FCB64D'
+    }
+}
     }
 
     post {
